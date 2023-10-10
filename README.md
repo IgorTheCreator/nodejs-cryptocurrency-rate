@@ -1,1 +1,1 @@
-# nodejs-currency-exchange
+# nodejs-cryptocurrency-rate
