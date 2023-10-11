@@ -4,7 +4,7 @@ import express from 'express';
 import 'dotenv/config';
 import WebSocket, { WebSocketServer } from 'ws';
 import router from './routes/index.js';
-import { subscribeToPair } from './utils/api.js';
+import { subscribeToPair, unsubscribeToPair } from './utils/api.js';
 
 const app = express();
 
@@ -18,7 +18,9 @@ const wsServer = new WebSocketServer({ server });
 
 wsServer.on('connection', (ws) => {
   ws.on('error', console.error);
+
   subscribeToPair();
+
   ws.on('message', (message) => {
     const parsedMessage = JSON.parse(message);
     const stringifiedMessage = JSON.stringify(parsedMessage);
@@ -27,6 +29,10 @@ wsServer.on('connection', (ws) => {
         client.send(stringifiedMessage);
       }
     });
+  });
+
+  ws.on('close', () => {
+    unsubscribeToPair();
   });
 });
 

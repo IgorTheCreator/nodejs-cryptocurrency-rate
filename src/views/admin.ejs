@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <a href="/">main page</a>
+    <form action="/admin" method="post">
+      <h2>Form</h2>
+      <div class="form__div">
+        <label for="price">enter price</label>
+        <input id="price" name="price" type="number" required />
+      </div>
+      <div class="form__div">
+        <label for="date">enter date</label>
+        <input id="date" name="date" type="datetime-local" required />
+      </div>
+
+      <input type="submit" />
+    </form>
+  </body>
+</html>
