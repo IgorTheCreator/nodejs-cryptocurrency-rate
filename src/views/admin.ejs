@@ -14,18 +14,25 @@
   </head>
   <body>
     <a href="/">main page</a>
-    <form action="/admin" method="post">
-      <h2>Form</h2>
-      <div class="form__div">
-        <label for="price">enter price</label>
-        <input id="price" name="price" type="number" required />
-      </div>
-      <div class="form__div">
-        <label for="date">enter date</label>
-        <input id="date" name="date" type="datetime-local" required />
-      </div>
-
-      <input type="submit" />
-    </form>
+    <div class="container">
+      <form action="/admin" method="post">
+        <h2 class="form__header">Form</h2>
+        <input
+          id="price"
+          name="price"
+          type="number"
+          placeholder="enter a number"
+          required
+        />
+        <input
+          id="date"
+          name="date"
+          type="datetime-local"
+          placeholder="enter a date"
+          required
+        />
+        <button type="submit">Send</button>
+      </form>
+    </div>
   </body>
 </html>
