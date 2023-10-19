@@ -16,7 +16,7 @@
     <a href="/admin">admin page</a>
     <div id="container">
       <p id="paragraph"></p>
-      <h1 id="header">0</h1>
+      <h1 id="header"><%= data ? data : 0%></h1>
     </div>
     <script>
       const header = document.getElementById('header');

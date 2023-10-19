@@ -8,6 +8,7 @@ import { subscribeToPair, unsubscribeToPair } from './utils/api.js';
 
 const app = express();
 
+app.use(express.urlencoded({ extended: false }));
 app.set('views', path.resolve('src', 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -37,5 +38,5 @@ wsServer.on('connection', (ws) => {
 });
 
 server.listen(3000, () => {
-  console.log('Listened port 3000');
+  console.log('Listening port 3000');
 });
